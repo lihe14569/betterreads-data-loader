@@ -30,9 +30,9 @@ public class Book {
     @CassandraType(type = Name.DATE)
     private LocalDate publishedDate;
 
-    @Column("first_sentence")
-    @CassandraType(type = Name.TEXT)
-    private String firstSentence;
+    // @Column("first_sentence")
+    // @CassandraType(type = Name.TEXT)
+    // private String firstSentence;
 
     @Column("cover_ids")
     @CassandraType(type = Name.LIST, typeArguments = Name.TEXT)
@@ -78,14 +78,6 @@ public class Book {
 
     public void setPublishedDate(LocalDate publishedDate) {
         this.publishedDate = publishedDate;
-    }
-
-    public String getFirstSentence() {
-        return firstSentence;
-    }
-
-    public void setFirstSentence(String firstSentence) {
-        this.firstSentence = firstSentence;
     }
 
     public List<String> getCoverIds() {
